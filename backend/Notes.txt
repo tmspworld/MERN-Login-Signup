@@ -1,0 +1,98 @@
+Now we will write Back end code 
+
+Step 1 Go in backend Folder and write 'npm init'
+  Desc : This will create package.json file here
+
+  write npm init
+  and just press enter to come out till you see the package.json file
+
+Step 2 Now we w Install some dependencies
+   - express for creating server
+   - bcryptjs for password decryption 
+   - cors : cors Policy - this file is generate an error of cors Policy bcoz react file runs on 3000 PORT and  when we make server We assign an any PORT So for the error will generate here that can not send data or receive data, Therefor we don't want the cors Policy error we Install cors dependency
+   - JsonwebToken : To generate Token for example When you Logged in Instagram in any pc it will be Logged in till we didn't Logged off by Own. So JsonwebToken use to check the which functionality has assign to user or not
+   - nodemon : This package use to start the file automatically restart
+
+  So finally run this command to Install all dependencies in once
+  " npm i express bcryptjs cors jsonwebtoken nodemon "
+
+Step 3 create index.js file in backend root 
+  index.js file : in this file we will compose the server and connect the mongo. this is the small project so we are writting this things in a same file but it should be in a two seperate file this will the good approch to manage code.
+
+  So We first create server with the help of express
+  so first we import the express 
+
+  we create a variable name "const express = require("express") " like this
+
+  now we have import it successfully 
+
+  to create server we need to use express server which is in express dependency
+
+const app = express()
+
+app.listen(5000, ()=>{
+  console.log("Server is running on port 5000");
+})
+
+Here the app is a instance of express funtion
+
+with the help of instance we start the server on port 5000 
+a callback funtion calling the console.log which will print the Server is ru status like this 
+"Server is running on port 5000"
+
+This 3 steps create the server Here
+
+Now to see the out put First we have to update the package.json file in script after test write "start:" command 
+e.g.:
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+
+  "start": "nodemon index.js" : When we give npm start command so it restart index.js file automatically get run 
+
+  Now test this command in terminal
+
+  npm start
+
+  OUTPUT :
+  H:\Learning 2024\MERN-Login-Signup\backend>npm start
+
+> backend@1.0.0 start
+> nodemon index.js   
+
+[nodemon] 3.1.7
+[nodemon] to restart at any time, enter `rs`  
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node index.js`
+Server is running on port 5000
+
+This is showing that server is running at port 5000
+
+Now to connect the mongoDB
+
+For that we do require the mongoos package 
+
+after first line we write this code
+const mongoose = require("mongoose")
+
+when we save it an error we get
+
+MODULE_NOT_FOUND',
+
+bcoz we haven't yett Install the mongoos package
+you can see it in package.json file
+
+So install that package write in terminal
+
+npm i mongoos
+
+const mongoose = require("mongoose")
+
+we have mongoos instance we have create by it we can create schema and can will connect the mongoDB
+
+so first we connect mongoDB
+
+Next NOtes You See In K YT Folder 
